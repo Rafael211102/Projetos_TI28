@@ -1,0 +1,38 @@
+body{
+    background-image: url(https://img.freepik.com/fotos-gratis/pao-de-forma-assada-no-balcao-da-cozinha-preto_23-2147926714.jpg?t=st=1719325884~exp=1719329484~hmac=cae818ca41291fdd79b2629a219d7209adf06549da9c6dc9dc1a6861d2466039&w=1380);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+/* Cntainer Global */
+.container-global{
+    display: flex;
+    justify-content: center;
+}
+
+.formulario{
+    display: flex;
+    justify-content: center;
+    align-content: center;;
+    flex-flow: column wrap;
+    margin-top: 300px;
+    width: 300px;
+    height: 400px;
+    color: aliceblue;
+    background-color: #5c55556c;
+    border-radius: 10px;
+    font-size: 22px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.formulario input{
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+.formulario img{
+    display: flex;
+    justify-content: center;
+    align-content: center;;
+
+}
