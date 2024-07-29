@@ -18,8 +18,8 @@ $contagem = mysqli_fetch_array($retorno) [0];
 if($contagem == 0){
     $sql = "INSERT INTO tb_usuarios(usu_login, usu_senha, usu_email, usu_status) VALUES('$login', '$senha', '$email', '1')";
     mysqli_query($link, $sql);
-    echo"<script>window.alert('UUSARIO CADSTRADO COM SUCESSO');</script>";
-    echo"<script>window.location.href='lohin.php';</script>";
+    echo"<script>window.alert('USARIO CADASTRADO COM SUCESSO');</script>";
+    echo"<script>window.location.href='login.php';</script>";
 }
 else if($contagem >=1){
     echo"<script>window.alert('USUARIO JÁ EXISTE!');</script>";
@@ -39,7 +39,7 @@ else if($contagem >=1){
 <body >
     
     <div class="container-global">
-       <a href="home.php" style="width: 50px; height: 50px; background-color: blue">VOLTAR</a>
+       <a href="backoffice.php"><img src="./icons/Navigation-left-01-256.png" ></a>
         <form class="formulario" action="usuario-cadastro.php" method="post">
        
         <label>LOGIN</label>

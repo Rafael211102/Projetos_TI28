@@ -1,4 +1,6 @@
 <?php 
+session_start();
+
 include("conectadb.php");
 
 if($_SERVER['REQUEST_METHOD']== 'POST'){
@@ -17,7 +19,15 @@ $contagem = mysqli_fetch_array($retorno) [0];
 
 // VERIFICA SE USUARIO EXISTE
 if($contagem == 1){
-    echo"<script>window.location.href='home.php';</script>";
+    $sql = "SELECT usu_id, usu_login FROM tb_usuarios WHERE  usu_login = '$login' AND usu_senha = '$senha'";
+    $retorno = mysqli_query($link, $sql);
+    // RETORNANDO O NOME DO NATHAN + ID DELE
+    while($tbl = mysqli_fetch_array($retorno)){
+        $_SESSION['idusuario'] = $tbl[0];
+        $_SESSION['nomeusuario'] = $tbl[1];
+    } 
+
+    echo"<script>window.location.href='backoffice.php';</script>";
 }
 else{
     echo"<script>window.alert('USUARIO OU SENHA INCORRETOS');</script>";
