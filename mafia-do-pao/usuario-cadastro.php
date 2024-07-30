@@ -39,7 +39,7 @@ else if($contagem >=1){
 <body >
     
     <div class="container-global">
-       <a href="backoffice.php"><img src="./icons/Navigation-left-01-256.png" ></a>
+       <a href="backoffice.php" height="0px" style="margin: 400px 0px 300px 0px;" ><img src="./icons/Navigation-left-01-256.png" width="80px" height="80px"  alt="Voltar" ></a>
         <form class="formulario" action="usuario-cadastro.php" method="post">
        
         <label>LOGIN</label>
@@ -50,7 +50,8 @@ else if($contagem >=1){
         <br>
         <input type="password" name="txtsenha" placeholder="Digite a sua senha" required>
         <br>
-        <label>Email</label>
+        <label>EMAIL</label>
+        <br>
         <input type="email" name="txtemail" placeholder="Digite o seu email" required>
         <br>
         <br>
