@@ -20,6 +20,7 @@ $nomeusuario = $_SESSION['nomeusuario'];
 
     <div class="container-home">
         <div class="topo">
+        <img src="img/logo.png" width="80px" height= "80px" style="margin-top: -15px;"  alt="">
             <?php
             if ($nomeusuario !=NULL){
             ?>

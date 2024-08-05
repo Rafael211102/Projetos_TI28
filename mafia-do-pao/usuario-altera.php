@@ -43,7 +43,7 @@ $retorno = mysqli_query($link, $sql);
     
     <div class="container-global">
        <a href="backoffice.php" height="0px" style="margin: 400px 0px 300px 0px;" ><img src="./icons/Navigation-left-01-256.png" width="80px" height="80px"  alt="Voltar" ></a>
-        <form class="formulario" action="usuario-alterar.php" method="post">
+        <form class="formulario" action="usuario-altera.php" method="post">
        
         <input type="hidden" name="id" value="<?= $id?>">
 
