@@ -15,7 +15,11 @@ $nomeusuario = $_SESSION['nomeusuario'];
     <link rel="stylesheet" href="css/estilo.css">
     <title>HOME</title>
 </head>
-
+<style>
+    body{
+         background-image: url(https://img.freepik.com/fotos-gratis/fundo-de-textura-padrao-de-marmore-preto-marmore-da-tailandia-marmore-natural-abstrato-em-preto-e-branco-para-design_1253-917.jpg?w=1380&t=st=1722955252~exp=1722955852~hmac=98ea1d853b368e38dd76e09d8f6da64f2c222a565ac4453527d331032f2598b4)
+    }
+</style>
 <body>
 
     <div class="container-home">
@@ -33,7 +37,7 @@ $nomeusuario = $_SESSION['nomeusuario'];
                 window.location.href='login.php';</script>");
             }
             ?>
-            <a href="logout.php"><img src="./icons/run.png" width="50px" height="50px"></a>
+            <a href="logout.php"><img src="./icons/Exit-02-WF-256.png" width="50px" height="50px"></a>
         </div>
 
         <div class="menu">

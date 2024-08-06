@@ -40,7 +40,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 <body >
     
     <div class="container-global">
-       <a href="backoffice.php" height="0px" style="margin: 400px 0px 300px 0px;" ><img src="./icons/Navigation-left-01-256.png" width="80px" height="80px"  alt="Voltar" ></a>
+       <a href="backoffice.php" height="0px" style="margin: 450px 0px 300px 0px;" ><img src="./icons/Navigation-left-01-256.png" width="80px" height="80px"  alt="Voltar" ></a>
         <form class="formulario" action="cliente-cadastro.php" method="post">
        
         <label>CPF</label>
@@ -59,7 +59,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         <br>
         <input type="text" id="telefone" name="txttel" placeholder="(XX) X XXXX-XXXX" maxlength="16" oninput="formatarTelefone()">
         <br>
-        <br>
+        
         <input type="submit" value="CRIAR">
 </form>
     </div>
@@ -88,26 +88,6 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
             input.value = valor;
         }
 
-        function formatarTelefone() {
-            const input = document.getElementById('telefone');
-            let valor = input.value;
-
-            // Remove caracteres não numéricos
-            valor = valor.replace(/\D/g, '');
-
-            // Adiciona a formatação ao valor
-            if (valor.length <= 2) {
-                valor = '(' + valor;
-            } else if (valor.length <= 7) {
-                valor = '(' + valor.slice(0, 2) + ') ' + valor.slice(2);
-            } else if (valor.length <= 11) {
-                valor = '(' + valor.slice(0, 2) + ') ' + valor.slice(2, 7) + '-' + valor.slice(7);
-            } else {
-                valor = '(' + valor.slice(0, 2) + ') ' + valor.slice(2, 7) + '-' + valor.slice(7, 11);
-            }
-
-            // Atualiza o valor do input com a formatação
-            input.value = valor;
-        }
+        
     </script>
 </html>
