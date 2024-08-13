@@ -1,13 +1,29 @@
 
 <?php 
 include('conectadb.php');
+include('topo.php');
 
 // CONSULTA USUARIOS CADASTRADOS
 $sql = "SELECT usu_login, usu_email, usu_status, usu_id
+        FROM tb_usuarios WHERE usu_status IN ('0', '1')";
+        $retono = mysqli_query($link, $sql);
+        $status = '';
+
+        // Enviando para o servidor o seletor radio em 0 ou 1
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $status = $_POST['status'];
+
+    if($status == '1'){
+        $sql = "SELECT usu_login, usu_email, usu_status, usu_id
         FROM tb_usuarios WHERE usu_status = '1'";
         $retono = mysqli_query($link, $sql);
-        $status = '1';
-
+    }
+    else{
+        $sql = "SELECT usu_login, usu_email, usu_status, usu_id
+        FROM tb_usuarios WHERE usu_status = '0'";
+        $retono = mysqli_query($link, $sql);
+    }
+}
 ?>
 
 
@@ -19,13 +35,17 @@ $sql = "SELECT usu_login, usu_email, usu_status, usu_id
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilo.css">
+    <script src="./javaScript.js"></script>
     <title>LISTA DE USUARIOS</title>
+    <link rel="shortcut icon" href="./icons/logo-icon.ico" type="image/x-icon">
 </head>
 
 <body>
     <div class="container-listausuarios">
-        <form>
-
+    <form action="usuario-lista.php" method="post">
+            <input type="radio" name="status" value="1" required onclick="submit()" <?=$status=='1' ? "checked": ""?>>ATIVOS
+            <br>
+            <input type="radio" name="status" value="0" required onclick="submit()" <?=$status=='0' ? "checked": ""?>>INATIVOS
         </form>
         <!-- Listar tabela de usuarios -->
         <table  class="lista">

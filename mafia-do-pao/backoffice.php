@@ -13,17 +13,18 @@ $nomeusuario = $_SESSION['nomeusuario'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilo.css">
+    <script src="./javaScript.js"></script>
     <title>HOME</title>
+    <link rel="shortcut icon" href="./icons/logo-icon.ico" type="image/x-icon">
 </head>
 <style>
     body{
-         background-image: url(https://img.freepik.com/fotos-gratis/fundo-de-textura-padrao-de-marmore-preto-marmore-da-tailandia-marmore-natural-abstrato-em-preto-e-branco-para-design_1253-917.jpg?w=1380&t=st=1722955252~exp=1722955852~hmac=98ea1d853b368e38dd76e09d8f6da64f2c222a565ac4453527d331032f2598b4)
+         background-image: url(../mafia-do-pao/img/img-fundo.jpg)
     }
 </style>
 <body>
 
-    <div class="container-home">
-        <div class="topo">
+<div class="topo">
         <img src="img/logo.png" width="80px" height= "80px" style="margin-top: -15px;"  alt="">
             <?php
             if ($nomeusuario !=NULL){

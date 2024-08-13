@@ -1,5 +1,6 @@
 <?php
 include('conectadb.php');
+include('topo.php');
 
 //Coleta o valor id lá da url
 $id = $_GET['id'];
@@ -36,7 +37,9 @@ $retorno = mysqli_query($link, $sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilo.css">
+    <script src="./javaScript.js"></script>
     <title>ALTERAÇÃO DE CLIENTE</title>
+    <link rel="shortcut icon" href="./icons/logo-icon.ico" type="image/x-icon">
 </head>
 <body >
     
@@ -45,8 +48,9 @@ $retorno = mysqli_query($link, $sql);
         <form class="formulario" action="cliente-altera.php" method="post">
        
         <input type="hidden" name="id" value="<?= $id?>">
-
-        
+        <label>CPF</label>
+        <br>
+        <input type="text" id="cpf" name="txtcpf" value="<?=$cpf?>" disabled>
         <label>CLIENTE</label>
         <br>
         <input type="text" name="txtnome"  value="<?=$nome?>" required disabled>
@@ -72,28 +76,4 @@ $retorno = mysqli_query($link, $sql);
 </form>
     </div>
 </body>
-
-<script>
-    function formatarTelefone() {
-            const input = document.getElementById('telefone');
-            let valor = input.value;
-
-            // Remove caracteres não numéricos
-            valor = valor.replace(/\D/g, '');
-
-            // Adiciona a formatação ao valor
-            if (valor.length <= 2) {
-                valor = '(' + valor;
-            } else if (valor.length <= 7) {
-                valor = '(' + valor.slice(0, 2) + ') ' + valor.slice(2);
-            } else if (valor.length <= 11) {
-                valor = '(' + valor.slice(0, 2) + ') ' + valor.slice(2, 7) + '-' + valor.slice(7);
-            } else {
-                valor = '(' + valor.slice(0, 2) + ') ' + valor.slice(2, 7) + '-' + valor.slice(7, 11);
-            }
-
-            // Atualiza o valor do input com a formatação
-            input.value = valor;
-        }
-</script>
 </html>

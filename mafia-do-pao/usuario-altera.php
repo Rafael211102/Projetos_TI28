@@ -1,5 +1,6 @@
 <?php
 include('conectadb.php');
+include('topo.php');
 
 // COLETA O VALOR ID LÁ DA URL
 $id = $_GET['id'];
@@ -37,7 +38,9 @@ $retorno = mysqli_query($link, $sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilo.css">
+    <script src="./javaScript.js"></script>
     <title>ALTERAÇÃO DE USUARIO</title>
+    <link rel="shortcut icon" href="./icons/logo-icon.ico" type="image/x-icon">
 </head>
 <body >
     

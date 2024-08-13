@@ -1,6 +1,6 @@
 body{
     /* background-image: linear-gradient(45deg, #D9556D, #F2AE2E, #F2D399, #D98B2B, #BF5A1F); */
-    background-image: url(https://img.freepik.com/fotos-gratis/doce-padaria-e-cafe_23-2147693721.jpg?t=st=1722951880~exp=1722955480~hmac=4191a980f32f22103f4adefeca570d3020ba2604194a383dcb6c80e4d3cb68a3&w=1380);
+    background-image: url(../img/img-fundo-login.jpg);
     background-size: 100%;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -32,9 +32,10 @@ body{
     align-items: center;
     align-content: center;
     flex-flow: column wrap;
-    margin-top: 200px;
+    text-align: center;
+    margin-top: 150px;
     width: 300px;
-    height: 550px;
+    height: 650px;
     color: rgb(0, 0, 0);
     border: 2px solid rgba(255, 255, 255, 0.18);
     border-radius: 10px;
@@ -66,9 +67,7 @@ body{
 
 }
 
-.formulario {
-    text-align: center;
-}
+
 
 
 /* CSS DO BACKOFFICE */
@@ -151,12 +150,11 @@ body{
 
 
 /* AJUSTANDO TABELAS DOS CADASTRADOS */
-.container-listausuarios {
+.container-listausuarios{
     display: flex;
     flex-flow: column;
     align-content: center;
     align-items: center;
-
 }
 
 .lista{
@@ -164,10 +162,29 @@ body{
     border-collapse: collapse;
     width: 80%;
     height: auto;
+    box-shadow: 10px 10px 10px rgb(168, 154, 154);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     
 }
 td, tr, th{
     color: whitesmoke;
     border: whitesmoke 1px solid;
     font-size: 20px;
+}
+
+.container-listaclientes{
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    align-items: center;
+}
+
+.container-listaclientes, .container-listausuarios form{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-flow: row;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
 }

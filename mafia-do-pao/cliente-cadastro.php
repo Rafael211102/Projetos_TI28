@@ -1,5 +1,6 @@
 <?php
 include("conectadb.php");
+include('topo.php');
 
 if($_SERVER['REQUEST_METHOD']=='POST'){
     $cpf = $_POST['txtcpf'];
@@ -35,7 +36,9 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilo.css">
+    <script src="./javaScript.js"></script>
     <title>CADASTRO DE USUARIO</title>
+    <link rel="shortcut icon" href="./icons/logo-icon.ico" type="image/x-icon">
 </head>
 <body >
     
@@ -45,7 +48,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
        
         <label>CPF</label>
         <br>
-        <input type="text" id="cpf" name="txtcpf" placeholder="Digite seu CPF" maxlength="14" oninput="formatarCPF()">
+        <input type="text" id="cpf" name="txtcpf" placeholder="000.000.000-00" maxlength="14" oninput="formatarCPF()">
         <br>
         <label>NOME</label>
         <br>
@@ -66,28 +69,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 </body>
 
 <script>
-        function formatarCPF() {
-            const input = document.getElementById('cpf');
-            let valor = input.value;
-
-            // Remove caracteres não numéricos
-            valor = valor.replace(/\D/g, '');
-
-            // Formata o valor do CPF
-            if (valor.length <= 3) {
-                valor = valor;
-            } else if (valor.length <= 6) {
-                valor = valor.slice(0, 3) + '.' + valor.slice(3);
-            } else if (valor.length <= 9) {
-                valor = valor.slice(0, 3) + '.' + valor.slice(3, 6) + '.' + valor.slice(6);
-            } else if (valor.length <= 11) {
-                valor = valor.slice(0, 3) + '.' + valor.slice(3, 6) + '.' + valor.slice(6, 9) + '-' + valor.slice(9);
-            }
-
-            // Atualiza o valor do input com a formatação
-            input.value = valor;
-        }
-
+        
         
     </script>
 </html>

@@ -3,6 +3,7 @@ session_start();
 
 include("conectadb.php");
 
+
 if($_SERVER['REQUEST_METHOD']== 'POST'){
     $login = $_POST['txtlogin'];
     $senha =$_POST['txtsenha'];
@@ -42,7 +43,9 @@ else{
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilo.css">
+    <script src="./javaScript.js"></script>
     <title>LOGIN USUARIO</title>
+    <link rel="shortcut icon" href="./icons/logo-icon.ico" type="image/x-icon">
 </head>
 <body >
     
