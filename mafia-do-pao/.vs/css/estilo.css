@@ -1,0 +1,185 @@
+body{
+    /* background-image: linear-gradient(45deg, #D9556D, #F2AE2E, #F2D399, #D98B2B, #BF5A1F); */
+    background-image: url(../img/img-fundo-login.jpg);
+    background-size: 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
+
+/* CONTAINER GLOBAL */
+.container-global{
+    display: flex;
+    justify-content: center;
+
+}
+
+.status{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    flex-direction: column;
+    justify-content: flex-end;
+
+}
+
+/* Formularios */
+.formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-flow: column wrap;
+    text-align: center;
+    margin-top: 150px;
+    width: 300px;
+    height: auto;
+    color: rgb(0, 0, 0);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: URW Chancery L, cursive;
+    backdrop-filter: blur(3px); 
+}
+
+
+.formulario:hover{
+    backdrop-filter: blur(5000px);
+    background: #726f6f;
+    box-shadow: 0px 0px 50px 0px #000000;
+}
+
+.formulario img{
+    display: flex;
+    align-self: center;
+    margin-bottom: 20px;
+}
+
+.formulario input{
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    width: 250px;
+    border-radius: 5px;
+    border: aliceblue 1px solid;
+
+}
+
+
+
+
+/* CSS DO BACKOFFICE */
+ .topo{
+    display: flex;
+    justify-content: space-between;
+    background-color: #606364;
+    height: 50px;
+    width: auto;
+    border-radius: 20px;
+    padding: 10px 10px 10px 10px;
+} 
+
+
+.topo label{
+    font-size: 30px;
+    color: #ffffff;
+}
+
+/* SAIR */
+.topo a{
+    width: 40px;
+    height: 40px;
+}
+
+/* ESTILIZAÇÃO DOS BOTÕES */
+.menu{
+    display: flex;
+    justify-content: center;
+    align-content:center;
+    flex-flow: row wrap;
+    margin-top: 30px;
+    font-size: 30px;
+    text-decoration: none;
+    
+}
+
+.menu a{
+    background-color: #ffffff0c;
+    width: 200px;
+    height: 200px;
+    margin: 30px 30px 30px 30px;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    transition: transform .5s;
+}
+.menu a:hover{
+    backdrop-filter: blur(5000px);
+    background: #606364;
+    box-shadow: 0px 0px 50px 0px #ffffff;
+    transform: scale(1.1);
+}
+
+.menu img{
+    border-radius: 20px;
+    height: 70px;
+}
+
+  
+  .menu .tooltiptext {
+    margin-top: 170px ;
+    width: 200px;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: medium;
+    text-align: center;
+    border-radius: 0px 0px 10px 10px;
+    padding: 5px 0;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+/* Fim do backoffice */
+
+
+/* AJUSTANDO TABELAS DOS CADASTRADOS */
+.container-listausuarios{
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    align-items: center;
+}
+
+.lista{
+    background-color: #63512f;
+    border-collapse: collapse;
+    width: 80%;
+    height: auto;
+    box-shadow: 10px 10px 10px rgb(168, 154, 154);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+td, tr, th{
+    color: whitesmoke;
+    border: whitesmoke 1px solid;
+    font-size: 20px;
+}
+
+
+
+.container-listaclientes, .container-listausuarios form{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-flow: row;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+}
