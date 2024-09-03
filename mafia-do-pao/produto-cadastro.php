@@ -1,5 +1,4 @@
 <?php
-include('topo.php');
 include("conectadb.php");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -8,10 +7,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $unidade = $_POST['txtunidade'];
     $preco = $_POST['txtpreco'];
 
-    if(isset($_FILES['imagem']) && $_FILES['imagem']['erro'] === UPLOAD_ERR_OK){
+    if(isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK){
 
     // AJUSTANDO IMAGEM PARA O BANCO
-    $imagem_temp = $_FILES['imagem']['tpm_name'];
+    $imagem_temp = $_FILES['imagem']['tmp_name'];
     $imagem = file_get_contents($imagem_temp);
 // CRIPTOGRAFIA IMAGEM EM BASE 64
     $imagem_base64 = base64_encode($imagem);
@@ -28,7 +27,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $sql = "INSERT INTO tb_produtos(pro_nome, pro_quantidade, pro_unidade, pro_preco, pro_status, pro_imagem)
 
         VALUES ('$nomeproduto', $quantidade, '$unidade', $preco, '1', '$imagem_base64')";
-         
+        
         $retorno = mysqli_query($link, $sql);
 
         echo"<script>window.alert('PRODUTO CADASTRADO');</script>";
@@ -52,12 +51,37 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <link rel="shortcut icon" href="./icons/logo-icon.ico" type="image/x-icon">
     <title>Cadastro produtos</title>
 </head>
+
+<header>
+<?php
+session_start();
+$nomeusuario = $_SESSION['nomeusuario'];
+?>
+
+        <div class="topo">
+        <a href="./backoffice.php"><img src="img/logo.png" width="80px" height= "80px" style="margin-top: -15px;"  alt=""></a>
+            <?php
+            if ($nomeusuario !=NULL){
+            ?>
+            <li class="perfil"><label>BEM VINDO <?= strtoupper($nomeusuario)?></label></li>
+            <?php
+            }
+
+            else{
+                echo("<script>window.alert('USUARIO NÃO LOGADO');
+                window.location.href='login.php';</script>");
+            }
+            ?>
+                    <span style="position: relative; float: left; left: 430px; margin-top: -5px;"><a href="backoffice.php"><img src="./icons/Navigation-left-01-256.png" width="70px" height="60px"  alt="Voltar" ></a></span>
+            <a href="logout.php"><img src="./icons/Exit-02-WF-256.png" width="50px" height="50px"></a>
+        </div>
+    
+</header>
+
 <body>
     <div class="container-global">
-    <a href="backoffice.php" height="0px" style="margin: 450px 0px 300px 0px;" ><img src="./icons/Navigation-left-01-256.png" width="80px" height="80px"  alt="Voltar" ></a>
-
-        <form action="produto-cadastro.php" class="formulario" method="post">
-        <img src="img/logo.png" width="150px" height= "150px"  alt="">
+        <form action="produto-cadastro.php" class="formulario" method="post" enctype="multipart/form-data">
+        <img src="img/logo.png" width="150px" height= "150px"  alt="Logo Mafia do Pão">
             <label>NOME PRODUTO</label>
             <input type="text" name="txtnome" placeholder="DIGITE O NOME DO PRODUTO" required>
             <br>

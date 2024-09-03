@@ -17,6 +17,6 @@ $nomeusuario = $_SESSION['nomeusuario'];
                 window.location.href='login.php';</script>");
             }
             ?>
-            
+                    <span style="position: relative; float: left; left: 450px;"><a href="produto-lista.php"><img src="./icons/Navigation-left-01-256.png" width="70px" height="60px"  alt="Voltar" ></a></span>
             <a href="logout.php"><img src="./icons/Exit-02-WF-256.png" width="50px" height="50px"></a>
         </div>

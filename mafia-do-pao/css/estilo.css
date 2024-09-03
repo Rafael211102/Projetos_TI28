@@ -35,7 +35,7 @@ body{
     text-align: center;
     margin-top: 150px;
     width: 300px;
-    height: 650px;
+    height: auto;
     color: rgb(0, 0, 0);
     border: 2px solid rgba(255, 255, 255, 0.18);
     border-radius: 10px;
@@ -172,15 +172,10 @@ td, tr, th{
     font-size: 20px;
 }
 
-.container-listaclientes{
-    display: flex;
-    flex-flow: column;
-    align-content: center;
-    align-items: center;
-}
+
 
 .container-listaclientes, .container-listausuarios form{
-    margin-top: 10px;
+    margin: 10px 10px 10px 10px;
     display: flex;
     justify-content: center;
     flex-flow: row;
@@ -188,3 +183,6 @@ td, tr, th{
     border-radius: 10px;
     padding: 10px 10px 10px 10px;
 }
+
+
+

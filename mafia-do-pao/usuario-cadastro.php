@@ -1,6 +1,5 @@
 <?php 
 include("conectadb.php");
-include('topo.php');
 
 if($_SERVER['REQUEST_METHOD']== 'POST'){
     $login = $_POST['txtlogin'];
@@ -40,12 +39,39 @@ else if($contagem >=1){
     <link rel="shortcut icon" href="./icons/logo-icon.ico" type="image/x-icon">
     
 </head>
+
+<header>
+<?php
+session_start();
+$nomeusuario = $_SESSION['nomeusuario'];
+?>
+
+        <div class="topo">
+        <a href="./backoffice.php"><img src="img/logo.png" width="80px" height= "80px" style="margin-top: -15px;"  alt=""></a>
+            <?php
+            if ($nomeusuario !=NULL){
+            ?>
+            <li class="perfil"><label>BEM VINDO <?= strtoupper($nomeusuario)?></label></li>
+            <?php
+            }
+
+            else{
+                echo("<script>window.alert('USUARIO NÃO LOGADO');
+                window.location.href='login.php';</script>");
+            }
+            ?>
+                    <span style="position: relative; float: left; left: 430px; margin-top: -5px;"><a href="backoffice.php"><img src="./icons/Navigation-left-01-256.png" width="70px" height="60px"  alt="Voltar" ></a></span>
+            <a href="logout.php"><img src="./icons/Exit-02-WF-256.png" width="50px" height="50px"></a>
+        </div>
+</header>
+
 <body >
     
     <div class="container-global">
-       <a href="backoffice.php" height="0px" style="margin: 400px 0px 300px 0px;" ><img src="./icons/Navigation-left-01-256.png" width="80px" height="80px"  alt="Voltar" ></a>
-        <form class="formulario" action="usuario-cadastro.php" method="post">
        
+        <form class="formulario" action="usuario-cadastro.php" method="post">
+        <img src="img/logo.png" width="150px" height= "150px"  alt="Logo Mafia do Pão">
+
         <label>LOGIN</label>
         <br>
         <input type="text" name="txtlogin" placeholder="Digite seu login" required>

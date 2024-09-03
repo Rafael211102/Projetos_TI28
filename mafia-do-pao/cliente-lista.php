@@ -1,11 +1,11 @@
 <?php 
 include('conectadb.php');
-include('topo.php');
+
 
 // CONSULTA USUARIOS CADASTRADOS
 $sql = "SELECT cli_id, cli_cpf, cli_nome, cli_email, cli_cel, cli_status
         FROM tb_clientes WHERE cli_status IN ('0', '1')";
-$retono = mysqli_query($link, $sql);
+$retorno = mysqli_query($link, $sql);
 $status = '';
 
 // Enviando para o servidor o seletor radio em 0 ou 1
@@ -15,12 +15,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if($status == '1'){
         $sql = "SELECT cli_id, cli_cpf, cli_nome, cli_email, cli_cel, cli_status 
                 FROM tb_clientes WHERE cli_status = '1'";
-        $retono = mysqli_query($link, $sql);
+        $retorno = mysqli_query($link, $sql);
     }
     else{
         $sql = "SELECT cli_id, cli_cpf, cli_nome, cli_email, cli_cel, cli_status 
                 FROM tb_clientes WHERE cli_status = '0'";
-        $retono = mysqli_query($link, $sql);
+        $retorno = mysqli_query($link, $sql);
     }
 }
 
@@ -38,15 +38,42 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <link rel="shortcut icon" href="./icons/logo-icon.ico" type="image/x-icon">
 </head>
 
+<header>
+<?php
+session_start();
+$nomeusuario = $_SESSION['nomeusuario'];
+?>
+
+        <div class="topo">
+        <a href="./backoffice.php"><img src="img/logo.png" width="80px" height= "80px" style="margin-top: -15px;"  alt=""></a>
+            <?php
+            if ($nomeusuario !=NULL){
+            ?>
+            <li class="perfil"><label>BEM VINDO <?= strtoupper($nomeusuario)?></label></li>
+            <?php
+            }
+
+            else{
+                echo("<script>window.alert('USUARIO NÃO LOGADO');
+                window.location.href='login.php';</script>");
+            }
+            ?>
+                    <span style="position: relative; float: left; left: 430px; margin-top: -5px;"><a href="backoffice.php"><img src="./icons/Navigation-left-01-256.png" width="70px" height="60px"  alt="Voltar" ></a></span>
+            <a href="logout.php"><img src="./icons/Exit-02-WF-256.png" width="50px" height="50px"></a>
+        </div>
+    
+</header>
+
 <body>
     
-    <div class="container-listaclientes">
+    <div class="container-listausuarios">
         <form action="cliente-lista.php" method="post">
             <input type="radio" name="status" value="1" required onclick="submit()" <?=$status=='1' ? "checked": ""?>>ATIVOS
             <br>
             <input type="radio" name="status" value="0" required onclick="submit()" <?=$status=='0' ? "checked": ""?>>INATIVOS
         </form>
-        <!-- Listar tabela de usuarios -->
+    
+        <!-- Listar tabela de clientes -->
         <table class="lista">
             <tr>
                 <th>CÓDIGO</th>
@@ -61,7 +88,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             
             <!-- BUSCAR NO BANCO OS DADOS DE TODOS OS USUARIOS -->
             <?php
-            while ($tbl = mysqli_fetch_array($retono)) {
+            while ($tbl = mysqli_fetch_array($retorno)) {
             ?>
                 <tr>
                     <td><?= $tbl['cli_id'] ?></td> <!-- COLETA O CÓDIGO DO USUÁRIO -->
@@ -82,7 +109,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             ?>
         </table>
     </div>
-    <a href="backoffice.php" height="0px"  ><img src="./icons/Navigation-left-01-256.png" width="50px" height="50px"  alt="Voltar" style="align-items: center;"></a>
+
 </body>
 
 </html>
