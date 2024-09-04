@@ -36,18 +36,19 @@ body{
     margin-top: 150px;
     width: 300px;
     height: auto;
-    color: rgb(0, 0, 0);
+    padding: 10px;
+    color: rgb(255, 255, 255);
     border: 2px solid rgba(255, 255, 255, 0.18);
     border-radius: 10px;
     font-size: 20px;
     font-family: URW Chancery L, cursive;
-    backdrop-filter: blur(3px); 
+    backdrop-filter: blur(50px); 
 }
 
 
 .formulario:hover{
     backdrop-filter: blur(5000px);
-    background: #726f6f;
+    background: #6b6969;
     box-shadow: 0px 0px 50px 0px #000000;
 }
 
@@ -93,6 +94,19 @@ body{
     height: 40px;
 }
 
+
+@media(max-width:604px){
+    .topo{
+        height: 55px;
+    }
+}
+
+@media(min-width:540px){
+.topo .hamb_menu{
+    display: none;
+}
+}
+
 /* ESTILIZAÇÃO DOS BOTÕES */
 .menu{
     display: flex;
@@ -106,7 +120,7 @@ body{
 }
 
 .menu a{
-    background-color: #ffffff0c;
+    background-color: #2c282852;
     width: 200px;
     height: 200px;
     margin: 30px 30px 30px 30px;
@@ -121,7 +135,7 @@ body{
 }
 .menu a:hover{
     backdrop-filter: blur(5000px);
-    background: #606364;
+    background: #8f9fa8;
     box-shadow: 0px 0px 50px 0px #ffffff;
     transform: scale(1.1);
 }
@@ -146,6 +160,15 @@ body{
     position: absolute;
     z-index: 1;
   }
+
+  @media(max-width:540px){
+    .menu{display: none;
+    }
+    
+    .topo label{
+        display: none;
+    }
+}
 /* Fim do backoffice */
 
 
@@ -158,6 +181,7 @@ body{
 }
 
 .lista{
+    margin-top: 10px;
     background-color: #63512f;
     border-collapse: collapse;
     width: 80%;
@@ -183,6 +207,5 @@ td, tr, th{
     border-radius: 10px;
     padding: 10px 10px 10px 10px;
 }
-
 
 

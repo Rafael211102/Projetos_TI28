@@ -28,7 +28,9 @@ $nomeusuario = $_SESSION['nomeusuario'];
 
 
     <div class="topo">
-        <img src="img/logo.png" width="80px" height="80px" style="margin-top: -15px;" alt="">
+        <img src="img/logo.png" width="80px" height="80px" style="margin-top: -15px;" alt="Logo">
+        
+        <img class="hamb_menu" src="../mafia-do-pao/icons/hamburguer_menu.png">
         <?php
         if ($nomeusuario != NULL) {
         ?>
@@ -56,6 +58,8 @@ $nomeusuario = $_SESSION['nomeusuario'];
         <a href="cliente-lista.php"><span class="tooltiptext"> LISTAR CLIENTE</span><img src="./icons/user-group.png"></a>
 
         <a href="vendas.php"><span class="tooltiptext"> VENDAS</span><img src="./icons/shopping-cart-04.png"></a>
+
+        <a href="venda-lista.php"><span class="tooltiptext">LISTA DE VENDAS</span><img src="./icons/sales-order.png" alt=""></a>
     </div>
     </div>
 

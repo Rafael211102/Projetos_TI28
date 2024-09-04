@@ -2,6 +2,7 @@
 include('conectadb.php');
 
 
+
 // A pagina carregou... o que ela vai fazer?
 
 // A pesquisa no banco todos os produtos do banco

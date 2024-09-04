@@ -56,6 +56,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         mysqli_query($link, $sqlfechavenda);
         
 
-        header("Location: backoffice.php");
+        header("Location: venda-lista.php");
     }
 }
