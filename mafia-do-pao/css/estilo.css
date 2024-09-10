@@ -15,6 +15,7 @@ body{
 
 }
 
+
 .status{
     width: 80%;
     margin: 0 auto;
@@ -45,6 +46,17 @@ body{
     backdrop-filter: blur(50px); 
 }
 
+#venda-lista .formulario{
+   margin-top: 10px;
+}
+
+#form_cli_cadastro .formulario{
+margin-top: 80px;
+}
+
+#form_cli_valor_vendas .formulario{
+    margin-top: 10px;
+}
 
 .formulario:hover{
     backdrop-filter: blur(5000px);

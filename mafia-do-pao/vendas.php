@@ -115,7 +115,7 @@ $nomeusuario = $_SESSION['nomeusuario'];
 <body>
 
 
-    <div class="container-global">
+    <div class="container-global" id="form_cli_valor_vendas">
 
         <form class="formulario" method="post" action="vendas.php">
             <label>SELECIONE O PRODUTO</label>
@@ -144,7 +144,7 @@ $nomeusuario = $_SESSION['nomeusuario'];
     </div>
 
     <!-- FORMULARIO FINAL DE NOME E ENVIO -->
-    <div class="container-global" style="margin-top: -100px;" >
+    <div class="container-global"  id="form_cli_valor_vendas">
         <form action="vendas-finalizar.php" method="POST" class="formulario">
 
         <label>SELECIONE O CLIENTE</label>

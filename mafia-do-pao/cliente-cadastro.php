@@ -68,7 +68,7 @@ $nomeusuario = $_SESSION['nomeusuario'];
 </header>
 
 <body>
-    <div class="container-global">
+    <div class="container-global" id="form_cli_cadastro" >
     
         <form class="formulario" action="cliente-cadastro.php" method="post">
         <img src="img/logo.png" width="150px" height= "150px"  alt="Logo Mafia do Pão">
